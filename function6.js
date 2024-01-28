@@ -1,0 +1,1 @@
+// Create a function behaving like a speed meter on the road. It will receive a speed of a car, allowed speed and tolerance in percentage. It should return OK or TICKET depending on if car speed is within limit
