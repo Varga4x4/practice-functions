@@ -2,19 +2,21 @@
 // He also could get 2 cards each time he cleans his room.
 // How many times he had to clean his room in a year to end up with 0 cards.
 
-const cards = 100
+let cards = 100
 const cardsToYoungerBrother = 6
 const cardsFromMom = 5
 const cardsForRoomCleaning = 2
-const weeks = 52
 
 const function1 = () => {
-    const calculateCardsWeekly = cards - cardsToYoungerBrother + cardsFromMom
+    const weeklyCardsTakenAway = cardsToYoungerBrother - cardsFromMom
 
-    const year1 = calculateCardsWeekly - weeks
+    while (cards > 0) {
+        cards--
+        cards -= weeklyCardsTakenAway
+    }
 
-    if (year1 > 0) {
-        console.log("Johnny doesn't need to clean the room")
+    if (cards === 0) {
+        console.log("Johhny, doesn't need to clean the room")
     }
 }
 function1()
