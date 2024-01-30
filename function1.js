@@ -17,6 +17,8 @@ const function1 = () => {
 
     if (cards === 0) {
         console.log("Johhny, doesn't need to clean the room")
+    } else {
+        cards += cardsForRoomCleaning
     }
 }
 function1()
