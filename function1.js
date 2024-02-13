@@ -7,18 +7,22 @@ const cardsToYoungerBrother = 6
 const cardsFromMom = 5
 const cardsForRoomCleaning = 2
 
-const function1 = () => {
-    const weeklyCardsTakenAway = cardsToYoungerBrother - cardsFromMom
+const function1 = (initialCardNumbers, everyMondayCardsLost, everyWednesdayCardsGet, cardsForRoomCleaning) => {
 
-    while (cards > 0) {
-        cards--
-        cards -= weeklyCardsTakenAway
+    let currentCardNumber = initialCardNumbers
+    for (let index = 1; index < 53; index++) {
+
+        currentCardNumber -= everyMondayCardsLost
+        currentCardNumber += everyWednesdayCardsGet
     }
 
-    if (cards === 0) {
-        console.log("Johhny, doesn't need to clean the room")
-    } else {
-        cards += cardsForRoomCleaning
+    if (currentCardNumber === 0) {
+        return 0
+    }
+
+    if (currentCardNumber < 0) {
+        const numberOfCleanings = Math.abs(currentCardNumber) / cardsForRoomCleaning
+        return numberOfCleanings
     }
 }
-function1()
+console.log(function1(52, 6, 5, 2))
